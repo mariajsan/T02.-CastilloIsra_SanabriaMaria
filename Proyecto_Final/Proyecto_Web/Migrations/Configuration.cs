@@ -9,8 +9,7 @@ namespace Proyecto_Web.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            ContextKey = "Proyecto_Web.Models.ApplicationDbContext";
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(Proyecto_Web.Models.ApplicationDbContext context)

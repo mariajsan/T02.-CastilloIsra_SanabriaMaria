@@ -29,18 +29,19 @@ namespace Proyecto_Web.Class
 
             if (userAsp == null)
             {
-                CreateUserASP("admin@adminmail.com", "123456", "Admin");
+                CreateUserASP("admin@adminmail.com", "123456", "Admin", "Admin");
             }
         }
 
-        public static void CreateUserASP(string email, string password, string rol)
+        public static void CreateUserASP(string email, string password, string username, string rol)
         {
             var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
             var userASP = new ApplicationUser()
             {
                 UserName = email,
                 Email = email,
-                //FirstName = "Nombre",
+                Name = username,
+                DateSignUp = DateTime.Now,
             };
 
             userManager.Create(userASP, password);
@@ -53,13 +54,15 @@ namespace Proyecto_Web.Class
             var userclient = clientdb.FindByName("demo@modamood.com");
             if (userclient == null)
             {
+
+                
+                CreateUserASP("demo@modamood.com", "123456", "Demo", "Reader");
                 userclient = clientdb.FindByName("demo@modamood.com");
-                CreateUserASP("demo@modamood.com", "123456", "Reader");
-                //var owner = new Owner
-                //{
-                //    OwnerId = userclient.Id
-                //};
-                //db.Owners.Add(owner);
+                var reader = new Reader
+                {
+                    ReaderId = userclient.Id
+                };
+                db.Readers.Add(reader);
                 db.SaveChanges();
             }
 

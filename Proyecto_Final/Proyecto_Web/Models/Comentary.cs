@@ -23,7 +23,7 @@ namespace Proyecto_Web.Models
         [Required]
         public string UserId { get; set; }
         [ForeignKey("UserId")]
-        public virtual IdentityUser User { get; set; }
+        public ApplicationUser ApplicationUser { get; set; }
 
         [Required]
         public int ArticleId { get; set; }

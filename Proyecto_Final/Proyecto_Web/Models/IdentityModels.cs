@@ -23,7 +23,7 @@ namespace Proyecto_Web.Models
         public string ImgUrl { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
-            // Tenga en cuenta que el valor de authenticationType debe coincidir con el definido en CookieAuthenticationOptions.AuthenticationType
+            // Tenga en cuenta que el N or de authenticationType debe coincidir con el definido en CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Agregar aquí notificaciones personalizadas de usuario
             return userIdentity;
@@ -48,6 +48,5 @@ namespace Proyecto_Web.Models
         public DbSet<Reader> Readers { get; set; }
         public DbSet<Comentary> Comentaries { get; set; }
         public DbSet<Favorite> Favorites { get; set; }
-        public DbSet<IdentityUser> IdentityUsers { get; set; }
     }
 }

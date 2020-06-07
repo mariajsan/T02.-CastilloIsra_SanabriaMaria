@@ -174,7 +174,6 @@
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\AuthorsController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
-    <Compile Include="Controllers\ComentariesController.cs" />
     <Compile Include="Controllers\FavoritesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -190,9 +189,13 @@
     <Compile Include="Migrations\202006070033472_Modelos.Designer.cs">
       <DependentUpon>202006070033472_Modelos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006070317004_userfk.cs" />
-    <Compile Include="Migrations\202006070317004_userfk.Designer.cs">
-      <DependentUpon>202006070317004_userfk.cs</DependentUpon>
+    <Compile Include="Migrations\202006070403568_stringpk.cs" />
+    <Compile Include="Migrations\202006070403568_stringpk.Designer.cs">
+      <DependentUpon>202006070403568_stringpk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006070510535_appuser.cs" />
+    <Compile Include="Migrations\202006070510535_appuser.Designer.cs">
+      <DependentUpon>202006070510535_appuser.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -420,11 +423,6 @@
     <Content Include="Views\Favorites\Details.cshtml" />
     <Content Include="Views\Favorites\Edit.cshtml" />
     <Content Include="Views\Favorites\Index.cshtml" />
-    <Content Include="Views\Comentaries\Create.cshtml" />
-    <Content Include="Views\Comentaries\Delete.cshtml" />
-    <Content Include="Views\Comentaries\Details.cshtml" />
-    <Content Include="Views\Comentaries\Edit.cshtml" />
-    <Content Include="Views\Comentaries\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -448,8 +446,11 @@
     <EmbeddedResource Include="Migrations\202006070033472_Modelos.resx">
       <DependentUpon>202006070033472_Modelos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006070317004_userfk.resx">
-      <DependentUpon>202006070317004_userfk.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006070403568_stringpk.resx">
+      <DependentUpon>202006070403568_stringpk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006070510535_appuser.resx">
+      <DependentUpon>202006070510535_appuser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
