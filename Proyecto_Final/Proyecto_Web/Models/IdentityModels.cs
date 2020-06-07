@@ -41,5 +41,13 @@ namespace Proyecto_Web.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Article> Articles { get; set; }
+        public DbSet<Reader> Readers { get; set; }
+        public DbSet<Comentary> Comentaries { get; set; }
+        public DbSet<Favorite> Favorites { get; set; }
+        public DbSet<IdentityUser> IdentityUsers { get; set; }
     }
 }

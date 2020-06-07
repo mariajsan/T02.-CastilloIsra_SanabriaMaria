@@ -39,5 +39,7 @@ namespace Proyecto_Web.Models
         public int AuthorId { get; set; }
         [ForeignKey("AuthorId")]
         public Author Author { get; set; }
+
+        public ICollection<Comentary> Comentaries { get; set; }
     }
 }

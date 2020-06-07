@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,5 +10,7 @@ namespace Proyecto_Web.Models
     {
         public int Id { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
+
+        public ICollection<Favorite> Favorites { get; set; }
     }
 }

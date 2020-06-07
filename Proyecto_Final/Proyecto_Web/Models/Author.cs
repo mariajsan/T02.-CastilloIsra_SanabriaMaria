@@ -15,5 +15,7 @@ namespace Proyecto_Web.Models
         public string Description { get; set; }
 
         public ApplicationUser ApplicationUser { get; set; }
+
+        public ICollection<Article> Articles { get; set; }
     }
 }

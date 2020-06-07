@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -20,9 +21,9 @@ namespace Proyecto_Web.Models
         public DateTime Date { get; set; }
 
         [Required]
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         [ForeignKey("UserId")]
-        public ApplicationUser ApplicationUser { get; set; }
+        public virtual IdentityUser User { get; set; }
 
         [Required]
         public int ArticleId { get; set; }
