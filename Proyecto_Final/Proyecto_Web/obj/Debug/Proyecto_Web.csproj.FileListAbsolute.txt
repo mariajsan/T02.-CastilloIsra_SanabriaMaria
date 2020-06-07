@@ -120,8 +120,10 @@ C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proye
 C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\bin\es\Microsoft.Owin.Security.Google.resources.dll
 C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
 C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\obj\Debug\Proyecto_Web.csprojAssemblyReference.cache
 C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\obj\Debug\Proyecto_Web.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\obj\Debug\Proyecto_Web.csproj.CopyComplete
 C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\obj\Debug\Proyecto_Web.dll
 C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\obj\Debug\Proyecto_Web.pdb
+C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\obj\Debug\Proyecto_Web.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\obj\Debug\Proyecto_Web.Migrations.InitialCreate.resources
+C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\obj\Debug\Proyecto_Web.csproj.GenerateResource.cache
