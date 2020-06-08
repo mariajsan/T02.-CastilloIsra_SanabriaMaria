@@ -38,9 +38,8 @@ namespace Proyecto_Web.Class
             var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
             var userASP = new ApplicationUser()
             {
-                UserName = email,
+                UserName = username,
                 Email = email,
-                Name = username,
                 DateSignUp = DateTime.Now,
             };
 

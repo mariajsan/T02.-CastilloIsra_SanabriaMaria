@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Proyecto_Web.Models;
+using System.Security.Cryptography;
 
 namespace Proyecto_Web.Controllers
 {
@@ -21,6 +23,7 @@ namespace Proyecto_Web.Controllers
         public AccountController()
         {
         }
+              
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
         {
@@ -61,6 +64,7 @@ namespace Proyecto_Web.Controllers
             return View();
         }
 
+        private ApplicationDbContext db = new ApplicationDbContext();
         //
         // POST: /Account/Login
         [HttpPost]
@@ -73,10 +77,34 @@ namespace Proyecto_Web.Controllers
                 return View(model);
             }
 
+            var email = db.Users.Where(o => o.Email == model.Email).FirstOrDefault();
+            var user = UserManager.FindById(email.Id);
             // No cuenta los errores de inicio de sesión para el bloqueo de la cuenta
             // Para permitir que los errores de contraseña desencadenen el bloqueo de la cuenta, cambie a shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
-            switch (result)
+            if (email.Email == user.Email) {
+                if (UserManager.CheckPassword(user, model.Password) == true)
+                {
+                    var result = await SignInManager.PasswordSignInAsync(user.UserName, model.Password, model.RememberMe, shouldLockout: false);
+                    switch (result)
+                    {
+                        case SignInStatus.Success:
+                            return RedirectToLocal(returnUrl);
+                        default:
+                            ModelState.AddModelError("", "Intento de inicio de sesión no válido.");
+                            return View(model);
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Intento de inicio de sesión no válido.");
+                    return View(model);
+                }
+            } 
+            else { 
+                ModelState.AddModelError("", "Intento de inicio de sesión no válido.");
+                return View(model);
+            }
+            /*switch (result)
             {
                 case SignInStatus.Success:
                     return RedirectToLocal(returnUrl);
@@ -88,7 +116,7 @@ namespace Proyecto_Web.Controllers
                 default:
                     ModelState.AddModelError("", "Intento de inicio de sesión no válido.");
                     return View(model);
-            }
+            }*/
         }
 
         //
@@ -151,7 +179,7 @@ namespace Proyecto_Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Name, Email = model.Email, DateSignUp = DateTime.Now };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -367,7 +395,7 @@ namespace Proyecto_Web.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { Email = model.Email};
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

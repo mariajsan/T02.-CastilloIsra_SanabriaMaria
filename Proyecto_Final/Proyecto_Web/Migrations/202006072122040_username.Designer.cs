@@ -7,13 +7,13 @@ namespace Proyecto_Web.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class stringpk : IMigrationMetadata
+    public sealed partial class username : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(stringpk));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(username));
         
         string IMigrationMetadata.Id
         {
-            get { return "202006070403568_stringpk"; }
+            get { return "202006072122040_username"; }
         }
         
         string IMigrationMetadata.Source

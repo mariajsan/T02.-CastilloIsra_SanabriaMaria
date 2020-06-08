@@ -10,8 +10,7 @@ namespace Proyecto_Web.Models
 {
     public class Reader
     {
-        [Key]
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         public string ReaderId { get; set; }
         [ForeignKey("ReaderId")]

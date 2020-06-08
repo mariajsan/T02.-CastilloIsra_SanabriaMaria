@@ -189,13 +189,9 @@
     <Compile Include="Migrations\202006070033472_Modelos.Designer.cs">
       <DependentUpon>202006070033472_Modelos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006070403568_stringpk.cs" />
-    <Compile Include="Migrations\202006070403568_stringpk.Designer.cs">
-      <DependentUpon>202006070403568_stringpk.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006070510535_appuser.cs" />
-    <Compile Include="Migrations\202006070510535_appuser.Designer.cs">
-      <DependentUpon>202006070510535_appuser.cs</DependentUpon>
+    <Compile Include="Migrations\202006072122040_username.cs" />
+    <Compile Include="Migrations\202006072122040_username.Designer.cs">
+      <DependentUpon>202006072122040_username.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -446,11 +442,8 @@
     <EmbeddedResource Include="Migrations\202006070033472_Modelos.resx">
       <DependentUpon>202006070033472_Modelos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006070403568_stringpk.resx">
-      <DependentUpon>202006070403568_stringpk.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006070510535_appuser.resx">
-      <DependentUpon>202006070510535_appuser.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006072122040_username.resx">
+      <DependentUpon>202006072122040_username.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -8,6 +8,7 @@ namespace Proyecto_Web.Models
         [Required]
         [Display(Name = "Correo electrónico")]
         public string Email { get; set; }
+
     }
 
     public class ExternalLoginListViewModel
@@ -64,6 +65,11 @@ namespace Proyecto_Web.Models
 
     public class RegisterViewModel
     {
+        [Required]
+        [Display(Name = "Nombre")]
+        [StringLength(100, ErrorMessage = "El número de caracteres de {0} debe ser al menos {2}.", MinimumLength = 5)]
+        public string Name { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Correo electrónico")]

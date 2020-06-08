@@ -11,10 +11,6 @@ namespace Proyecto_Web.Models
     // Para agregar datos de perfil del usuario, agregue más propiedades a su clase ApplicationUser. Visite https://go.microsoft.com/fwlink/?LinkID=317594 para obtener más información.
     public class ApplicationUser : IdentityUser
     {
-        [Required]
-        [Display(Name = "Nombre")]
-        [MaxLength(100)]
-        public string Name { get; set; }
 
         [Required]
         public DateTime DateSignUp { get; set; }
@@ -48,5 +44,6 @@ namespace Proyecto_Web.Models
         public DbSet<Reader> Readers { get; set; }
         public DbSet<Comentary> Comentaries { get; set; }
         public DbSet<Favorite> Favorites { get; set; }
+        
     }
 }
