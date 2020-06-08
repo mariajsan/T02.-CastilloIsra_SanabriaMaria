@@ -19,9 +19,9 @@ namespace Proyecto_Web
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            /*this.CheckRoles();
+            this.CheckRoles();
             Utilities.CheckSuperUser();
-            Utilities.CheckClientDefault();*/
+            Utilities.CheckClientDefault();
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             
         }

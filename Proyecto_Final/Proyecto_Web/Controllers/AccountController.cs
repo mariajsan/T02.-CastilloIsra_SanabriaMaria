@@ -72,6 +72,7 @@ namespace Proyecto_Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
+            
             if (!ModelState.IsValid)
             {
                 return View(model);
@@ -84,10 +85,14 @@ namespace Proyecto_Web.Controllers
             if (email.Email == user.Email) {
                 if (UserManager.CheckPassword(user, model.Password) == true)
                 {
+                    
+                    
                     var result = await SignInManager.PasswordSignInAsync(user.UserName, model.Password, model.RememberMe, shouldLockout: false);
                     switch (result)
                     {
                         case SignInStatus.Success:
+                            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+                            userManager.AddToRole(email.Id, "Reader");
                             return RedirectToLocal(returnUrl);
                         default:
                             ModelState.AddModelError("", "Intento de inicio de sesión no válido.");

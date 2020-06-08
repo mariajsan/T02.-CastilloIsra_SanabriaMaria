@@ -25,7 +25,7 @@ namespace Proyecto_Web.Class
         internal static void CheckSuperUser()
         {
             var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
-            var userAsp = userManager.FindByName("admin@adminmail.com");
+            var userAsp = userManager.FindByName("Admin");
 
             if (userAsp == null)
             {
@@ -42,21 +42,21 @@ namespace Proyecto_Web.Class
                 Email = email,
                 DateSignUp = DateTime.Now,
             };
-
             userManager.Create(userASP, password);
             userManager.AddToRole(userASP.Id, rol);
+
         }
 
         internal static void CheckClientDefault()
         {
             var clientdb = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
-            var userclient = clientdb.FindByName("demo@modamood.com");
+            var userclient = clientdb.FindByName("Demo");
             if (userclient == null)
             {
 
                 
                 CreateUserASP("demo@modamood.com", "123456", "Demo", "Reader");
-                userclient = clientdb.FindByName("demo@modamood.com");
+                userclient = clientdb.FindByName("Demo");
                 var reader = new Reader
                 {
                     ReaderId = userclient.Id

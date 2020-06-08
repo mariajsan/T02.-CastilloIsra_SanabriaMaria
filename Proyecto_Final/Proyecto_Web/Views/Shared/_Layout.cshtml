@@ -29,10 +29,18 @@
                         ¡Bienvenido, @User.Identity.Name!
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="@Url.Action("Index", "Articles")" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <!-- Universal-->
+                        <a class="dropdown-item" href="@Url.Action("Index", "Manage")">Mi cuenta</a>
+                        <!-- Solo lector-->
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="@Url.Action("Index", "Favorites")">Favoritos</a>
+                        <!-- Solo Autores-->
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="@Url.Action("Index", "Articles")">Artículos</a>
+                        <!-- Solo Admins-->
+                        <a class="dropdown-item" href="@Url.Action("Index", "Authors")">Autores</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="@Url.Action("Index", "Readers")">Lectores</a>
                     </div>
                 </li>
             </ul>

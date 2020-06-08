@@ -59,7 +59,6 @@ C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proye
 C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\bin\Microsoft.Owin.dll
 C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\bin\Microsoft.Owin.Security.Cookies.dll
 C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\bin\Microsoft.Owin.Security.dll
 C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\bin\Microsoft.Owin.Security.Facebook.dll
 C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\bin\Microsoft.Owin.Security.Google.dll
