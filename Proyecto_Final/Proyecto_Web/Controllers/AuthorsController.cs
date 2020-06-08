@@ -6,6 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Proyecto_Web.Class;
 using Proyecto_Web.Models;
 
 namespace Proyecto_Web.Controllers
@@ -38,24 +41,38 @@ namespace Proyecto_Web.Controllers
         // GET: Authors/Create
         public ActionResult Create()
         {
+
             return View();
         }
-
         // POST: Authors/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Description")] Author author)
+        public ActionResult Create(string Description, string UserName, string Email, string Password, string ImgUrl)
         {
-            if (ModelState.IsValid)
+            Utilities.CreateUserASP(Email, Password, UserName, "Author");
+            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            var newauthor = userManager.FindByName(UserName);
+            var author = new Author()
             {
+                Description = Description,
+                ApplicationUser_Id = newauthor.Id,
+            };
+            if (ModelState.IsValid)
+            {              
+                
                 db.Authors.Add(author);
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
             return View(author);
+        }
+
+        public static void GenerateAppId() { 
+        
         }
 
         // GET: Authors/Edit/5
