@@ -7,13 +7,13 @@ namespace Proyecto_Web.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class authors : IMigrationMetadata
+    public sealed partial class img : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(authors));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(img));
         
         string IMigrationMetadata.Id
         {
-            get { return "202006080618154_authors"; }
+            get { return "202006080927523_img"; }
         }
         
         string IMigrationMetadata.Source

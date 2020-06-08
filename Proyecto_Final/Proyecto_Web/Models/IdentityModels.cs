@@ -15,6 +15,7 @@ namespace Proyecto_Web.Models
         [Required]
         public DateTime DateSignUp { get; set; }
 
+        [DataType(DataType.Upload)]
         [Display(Name = "Imagen")]
         public string ImgUrl { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)

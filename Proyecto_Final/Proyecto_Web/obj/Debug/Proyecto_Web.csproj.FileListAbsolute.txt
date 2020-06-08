@@ -126,4 +126,5 @@ C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proye
 C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\obj\Debug\Proyecto_Web.csproj.GenerateResource.cache
 C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\obj\Debug\Proyecto_Web.Migrations.Modelos.resources
 C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\obj\Debug\Proyecto_Web.Migrations.username.resources
-C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\obj\Debug\Proyecto_Web.Migrations.authors.resources
+C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\obj\Debug\Proyecto_Web.Migrations.img.resources
+C:\Users\Admin\source\repos\T02.-CastilloIsra_SanabriaMaria\Proyecto_Final\Proyecto_Web\obj\Debug\Proyecto_Web.csprojAssemblyReference.cache

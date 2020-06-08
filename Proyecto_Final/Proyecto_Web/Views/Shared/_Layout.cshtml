@@ -24,37 +24,62 @@
                 <li class="nav-item">
                     <a class="nav-link" href="@Url.Action("Contact", "Home")">¡Contáctanos!</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        ¡Bienvenido, @User.Identity.Name!
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <!-- Universal-->
-                        <a class="dropdown-item" href="@Url.Action("Index", "Manage")">Mi cuenta</a>
-                        <!-- Solo lector-->
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="@Url.Action("Index", "Favorites")">Favoritos</a>
-                        <!-- Solo Autores-->
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="@Url.Action("Index", "Articles")">Artículos</a>
-                        <!-- Solo Admins-->
-                        <a class="dropdown-item" href="@Url.Action("Index", "Authors")">Autores</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="@Url.Action("Index", "Readers")">Lectores</a>
-                    </div>
-                </li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            ¡Bienvenido, @User.Identity.Name!
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <!-- Universal-->
+                            <a class="dropdown-item" href="@Url.Action("Index", "Manage")">Mi cuenta</a>
+                            <!-- Solo lector-->
+                            @if (User.IsInRole("Reader"))
+                            {
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="@Url.Action("Index", "Favorites")">Favoritos</a>
+                            }
+                            @if (User.IsInRole("Author"))
+                            {
+                                <!-- Solo Autores-->
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="@Url.Action("Index", "Articles")">Artículos</a>
+                            }
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <!-- Solo Admins-->
+                                <a class="dropdown-item" href="@Url.Action("Index", "Articles")">Artículos</a>
+                                <a class="dropdown-item" href="@Url.Action("Index", "Authors")">Autores</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="@Url.Action("Index", "Readers")">Lectores</a>
+                            }
+
+                        </div>
+                    </li>
+                }
+
             </ul>
 
 
             <span class="navbar-text">
-                <a href="@Url.Action("Register", "Account")" class="badge badge-light">Registro</a>
-                <a href="@Url.Action("Login", "Account")" class="badge badge-light">Iniciar sesión</a>
-                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-                {
-                    @Html.AntiForgeryToken()
 
-            <a class="badge badge-light" href="javascript:document.getElementById('logoutForm').submit()">Cerrar sesión</a>
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <a href="@Url.Action("Register", "Account")" class="badge badge-light">Registro</a>
+                    <a href="@Url.Action("Login", "Account")" class="badge badge-light">Iniciar sesión</a>
+                }
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <a class="badge badge-light" href="javascript:document.getElementById('logoutForm').submit()">Cerrar sesión</a>
                     }
+                }
+
             </span>
         </div>
     </nav>

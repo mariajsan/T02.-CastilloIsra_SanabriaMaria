@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using Proyecto_Web.Models;
 
@@ -44,16 +46,29 @@ namespace Proyecto_Web.Controllers
             return View();
         }
 
+        public ActionResult ViewEventos() {
+            var categoria = db.Categories.Where(c => c.Name == "Eventos").FirstOrDefault();
+            var eventos = db.Articles.Include(u => u.Category).Where(u => u.CategoryId == categoria.Id).ToList();
+
+            if (eventos == null)
+            {
+                return HttpNotFound();
+            }
+            return View(eventos);
+        }
         // POST: Articles/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,CategoryId,Description,Content,Posted,ImgUrl,AuthorId")] Article article)
+        public ActionResult Create([Bind(Include = "Id,Title,CategoryId,Description,Content,ImgUrl,AuthorId")] Article article)
         {
+            var newarticle = article;
+            newarticle.Posted = DateTime.Now;
             if (ModelState.IsValid)
             {
-                db.Articles.Add(article);
+              
+                db.Articles.Add(newarticle);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -132,5 +147,6 @@ namespace Proyecto_Web.Controllers
             }
             base.Dispose(disposing);
         }
+
     }
 }

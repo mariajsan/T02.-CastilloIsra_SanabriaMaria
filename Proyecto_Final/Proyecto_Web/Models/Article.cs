@@ -31,9 +31,10 @@ namespace Proyecto_Web.Models
         [Required]
         public DateTime Posted { get; set; }
 
+        [DataType(DataType.Upload)]
         [Display(Name = "Encabezado")]
         [Required]
-        public string ImgUrl{ get; set; }
+        public string ImgUrl { get; set; }
 
         [Required]
         public int AuthorId { get; set; }

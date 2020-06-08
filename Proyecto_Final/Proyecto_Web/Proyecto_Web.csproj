@@ -196,9 +196,9 @@
     <Compile Include="Migrations\202006072122040_username.Designer.cs">
       <DependentUpon>202006072122040_username.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006080618154_authors.cs" />
-    <Compile Include="Migrations\202006080618154_authors.Designer.cs">
-      <DependentUpon>202006080618154_authors.cs</DependentUpon>
+    <Compile Include="Migrations\202006080927523_img.cs" />
+    <Compile Include="Migrations\202006080927523_img.Designer.cs">
+      <DependentUpon>202006080927523_img.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -426,6 +426,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Articles\ViewEventos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -449,8 +450,8 @@
     <EmbeddedResource Include="Migrations\202006072122040_username.resx">
       <DependentUpon>202006072122040_username.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006080618154_authors.resx">
-      <DependentUpon>202006080618154_authors.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006080927523_img.resx">
+      <DependentUpon>202006080927523_img.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
